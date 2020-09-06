@@ -6,11 +6,11 @@ local comp = require("component")
 local ser = require("serialization")
 local inv = comp.inventory_controller
 
-local linear_test = {}
+local assembly_line = {}
 
-function linear_test.check(file_name)
+function assembly_line.check(file_name)
   local list = {}
-  local file = fs.open("/home/linear_recepies/" .. file_name, "w")
+  local file = fs.open("/usr/bin/assembly_line/recepies/" .. file_name, "w")
   print(file)
   if(file) then print("файл создался"); else print("файл не создался"); end
   for i = 1, inv.getInventorySize(sides.top), 1 do
@@ -23,8 +23,7 @@ function linear_test.check(file_name)
   local tmp = ser.serialize(list)
   file:write(tmp)
   print(tmp)
-  --file:flush()
   file:close()
 end
 
-return linear_test
+return assembly_line
