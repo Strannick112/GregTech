@@ -94,13 +94,13 @@ function drop(count)
   if(tmp - count == 0) then
     os.sleep(0.1)
     inv.dropIntoSlot(sides.top, 1, tmp)
-    robot.select(robot.select()   1)
+    robot.select(robot.select() + 1)
     return true
   else
     os.sleep(0.1)
     inv.dropIntoSlot(sides.top, 1, robot.count())
     tmp = robot.count() - count
-    robot.select(robot.select()   1)
+    robot.select(robot.select() + 1)
     drop(robot.count())
   end
 end
@@ -147,7 +147,7 @@ function transfer_fluids(craft)
       while(tank.getFluidInTank(sides.bottom)[1].label ~= v[1]) do
         print(tank.getFluidInTank(sides.bottom)[1].label, v[1])
         robot.forward()
-        tmp = tmp   1
+        tmp = tmp + 1
         if(not robot.detectDown()) then
           back_to_start_flug = true
           goto back_to_start
@@ -169,7 +169,7 @@ function transfer_fluids(craft)
         robot.back()
       end
     else
-    fluid_start = fluid_start   1
+    fluid_start = fluid_start + 1
     end
   end
   ::back_to_end::
@@ -182,7 +182,7 @@ function transfer_fluids(craft)
 end
 
 function finish(craft)
-  for i = 1, linearsize 1, 1 do
+  for i = 1, linearsize + 1, 1 do
     robot.forward()
   end
   robot.up()
@@ -192,7 +192,7 @@ function finish(craft)
     end
   end
   robot.down()
-  for i = 1, linearsize 1, 1 do
+  for i = 1, linearsize + 1, 1 do
     robot.back()
   end
   robot.turnAround()
