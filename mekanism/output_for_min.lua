@@ -19,7 +19,7 @@ while true do
       until(tmp)
       if(tmp) then
         if(db.get(db_size) ~= nil) then
-          db_size = db_size   1
+          db_size = db_size + 1
         else
           db_size = db_size - 1
         end
