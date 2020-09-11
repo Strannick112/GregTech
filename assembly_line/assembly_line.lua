@@ -21,7 +21,7 @@ function init()
     local tmp = file:read("*a")
     file:close()
     local tmp2 = ser.unserialize(tmp)
-    recepie[#recepie+1] = {[file_name] = tmp2})
+    recepie[#recepie+1] = {[file_name] = tmp2}
     print(#recepie)
     for k, v in pairs(recepie[#recepie]) do
       print(key, value)
