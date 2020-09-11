@@ -26,11 +26,12 @@ function init()
 end
 
 function check()
-  if inv.getStackInSlot(sides.top, 1) then
-    return false
-  else
-    return true 
+  for i = 1, invsize, 1 do
+    if inv.getStackInSlot(sides.top, 1) then
+      return false
+    end
   end
+    return true
 end
 
 function check_input()
