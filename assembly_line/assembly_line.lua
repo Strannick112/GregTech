@@ -29,10 +29,11 @@ function init()
         --print(key, value)
       --end
   --end 
-  table.insert(recepie, {[file_name] = file})
-  for k, v in pairs(recepie[#recepie]) do
-    print(key, value)
-    os.sleep(1)
+    table.insert(recepie, {[file_name] = file})
+    for k, v in pairs(recepie[#recepie]) do
+      print(key, value)
+      os.sleep(1)
+    end
   end
 end
 
