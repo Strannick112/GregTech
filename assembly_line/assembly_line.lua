@@ -240,6 +240,8 @@ while true do
   end
   print("doing")
   craft = check_input()
+  print(craft)
+  os.sleep(2)
   if (craft ~= "jerk") then
     print(craft)
     take_resources(craft)
