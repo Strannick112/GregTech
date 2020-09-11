@@ -71,6 +71,7 @@ function take_resources(craft)
             if(inv.getStackInSlot(sides.top, i).label == v[1]) then
               print(v[1])
               inv.suckFromSlot(sides.top, i, v[2])
+              break
             end
           end
         end
