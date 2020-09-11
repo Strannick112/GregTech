@@ -13,23 +13,24 @@ local ser = require("serialization")
 
 local recepie = {}
 
-for file_name in fs.list("/usr/bin/assembly_line/recepies") do
+function init()
+  
+  for file_name in fs.list("/usr/bin/assembly_line/recepies") do
+    local file = io.open("/usr/bin/assembly_line/recepies/"..file_name, "r")
+    local tmp = file:read("*a")
+    file:close()
+    local tmp2 = ser.unserialize(tmp)
 
-	local file = io.open("/usr/bin/assembly_line/recepies/"..file_name, "r")
-	local tmp = file:read("*a")
-	file:close()
-	local tmp2 = ser.unserialize(tmp)
-
-	--print(tmp)
-	--print("--------")
-	--for k, v in pairs(tmp2) do
-  		--for key, value in pairs(v) do
-    		--print(key, value)
-  		--end
-	--end	
-	table.insert(recepie, {[file_name] = file})
+  --print(tmp)
+  --print("--------")
+  --for k, v in pairs(tmp2) do
+      --for key, value in pairs(v) do
+        --print(key, value)
+      --end
+  --end 
+    table.insert(recepie, {[file_name] = file})
+  end
 end
-
 
 function check()
   if inv.getStackInSlot(sides.top, 1) then
