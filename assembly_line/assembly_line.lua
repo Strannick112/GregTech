@@ -24,7 +24,7 @@ function init()
     recepie[#recepie + 1] = { [file_name] = tmp2 }
     print(#recepie)
     for k, v in pairs(recepie[#recepie]) do
-      print(key, value)
+      print(k, v)
       os.sleep(1)
     end
   end
