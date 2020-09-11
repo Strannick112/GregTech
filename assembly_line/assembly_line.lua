@@ -14,7 +14,7 @@ local ser = require("serialization")
 local recepie = {}
 
 function init()
-  
+
   for file_name in fs.list("/usr/bin/assembly_line/recepies") do
     local file = io.open("/usr/bin/assembly_line/recepies/"..file_name, "r")
     local tmp = file:read("*a")
@@ -234,6 +234,7 @@ function finish(craft)
   print("Craft succesfull!")
 end
 
+init()
 while true do
   print("it's start")
   while check() do
