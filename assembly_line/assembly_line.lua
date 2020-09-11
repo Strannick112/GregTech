@@ -6,7 +6,7 @@ local tank = comp.tank_controller
 local sides = require("sides")
 local invsize = 27
 local linearsize = 10
-local fs = require("filesystem")
+local fs = comp.filesystem
 local ser = require("serialization")
 --local io = require("io")
 
@@ -15,7 +15,7 @@ local recepie = {}
 
 function init()
 
-  for _, file_name in pairs(fs.list("/usr/bin/assembly_line/recepies")) do
+  for _, file_name in ipairs(fs.list("/usr/bin/assembly_line/recepies")) do
     print(file_name)
     local file = io.open("/usr/bin/assembly_line/recepies/"..file_name, "r")
     local tmp = file:read("*a")
