@@ -15,7 +15,8 @@ local recepie = {}
 
 function init()
 
-  for file_name in fs.list("/usr/bin/assembly_line/recepies") do
+  for _, file_name in pairs(fs.list("/usr/bin/assembly_line/recepies")) do
+    print(file_name)
     local file = io.open("/usr/bin/assembly_line/recepies/"..file_name, "r")
     local tmp = file:read("*a")
     file:close()
