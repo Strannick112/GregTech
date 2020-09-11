@@ -39,6 +39,7 @@ function check_input()
   for key, value in pairs(recepie) do
     flag_outside = true
     for k, v in pairs(value) do
+      print(v[3])
       if (v[3] == "solid") then
         flag_inside = false
         for i = 1, invsize, 1 do
@@ -209,10 +210,12 @@ function finish(craft)
     end
   end
   robot.turnLeft()
+  local temp_chest = 1
   for i = 16, 1, -1 do
     if(inv.getStackInInternalSlot(i) ~= nil ) then
       robot.select(i)
       for j = 1, invsize, 1 do
+
         if(inv.getStackInSlot(sides.front, j) == nil ) then
           if(i == 1) then 
             os.sleep(1) 
