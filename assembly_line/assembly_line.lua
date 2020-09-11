@@ -39,7 +39,6 @@ function check_input()
   for key, value in pairs(recepie) do
     flag_outside = true
     for k, v in pairs(value) do
-      print(v[3])
       if (v[3] == "solid") then
         flag_inside = false
         for i = 1, invsize, 1 do
