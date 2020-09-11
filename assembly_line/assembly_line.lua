@@ -221,6 +221,7 @@ function finish(craft)
             os.sleep(1) 
           end
           inv.dropIntoSlot(sides.front, j)
+          break
         end
       end
     end
