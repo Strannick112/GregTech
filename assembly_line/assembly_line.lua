@@ -21,14 +21,17 @@ function init()
     file:close()
     local tmp2 = ser.unserialize(tmp)
 
-  print(tmp)
-  print("--------")
-  for k, v in pairs(tmp2) do
-      for key, value in pairs(v) do
-        print(key, value)
-      end
-    end 
-    table.insert(recepie, {[file_name] = file})
+  --print(tmp)
+  --print("--------")
+  --for k, v in pairs(tmp2) do
+      --for key, value in pairs(v) do
+        --print(key, value)
+      --end
+  --end 
+  table.insert(recepie, {[file_name] = file})
+  for k, v in pairs(recepie[#recepie]) do
+    print(key, value)
+    os.sleep(1)
   end
 end
 
