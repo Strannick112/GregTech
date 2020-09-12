@@ -3,6 +3,16 @@ local os = require("os")
 local db = comp.database
 local me_controller = comp.me_controller
 local export_bus = comp.me_exportbus
+local side
+
+function init()
+  for 0, 5, 1 do
+    if(export_bus.getExportConfiguration(i) not nil)
+      side = i
+      break
+    end
+  end
+end
 
 while true do
   local me = nil
