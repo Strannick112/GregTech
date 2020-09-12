@@ -30,7 +30,7 @@ function chessController:new()
         end
     end
 
-    obj:obj:clearCache()
+    obj.obj:clearCache()
 
     return obj
 end
