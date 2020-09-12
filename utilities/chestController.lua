@@ -14,7 +14,7 @@ function chestController:new()
     end
 
     function obj:readChessIC(side, ic)
-        self.obj:clearCache()
+        self:clearCache()
         for i = 1, ic.getInventorySize(side), 1 do
             local item = ic.getStackInSlot(side, i)
             if(item ~= nil) then
@@ -30,7 +30,7 @@ function chestController:new()
         end
     end
 
-    obj.obj:clearCache()
+    obj:clearCache()
 
     return obj
 end
