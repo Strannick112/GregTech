@@ -3,7 +3,18 @@ local os = require("os")
 local db = comp.database
 local me_controller = comp.me_controller
 local export_bus = comp.me_exportbus
+local side
 
+function init()
+  for i = 0, 5, 1 do
+    if(export_bus.getExportConfiguration(i) ~= nil) then
+      side = i
+      break
+    end
+  end
+end
+
+init()
 while true do
   local me = nil
   repeat
@@ -18,7 +29,7 @@ while true do
     print("--------")
     print("Сейчас обрабатывается: ", min_label)
     print("В сети его сейчас: ", min)
-    export_bus.setExportConfiguration(2, 1, db.address, 1)
+    export_bus.setExportConfiguration(side, 1, db.address, 1)
     db.clear(1)
   else
     print("--------")

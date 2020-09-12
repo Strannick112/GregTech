@@ -4,7 +4,18 @@ local db = comp.database
 local me_controller = comp.me_controller
 local export_bus = comp.me_exportbus
 local db_size
+local side
 
+function init()
+  for i = 0, 5, 1 do
+    if(export_bus.getExportConfiguration(i) ~= nil) then
+      side = i
+      break
+    end
+  end
+end
+
+init()
 while true do
   db_size = 1
   local me = nil
@@ -39,7 +50,7 @@ while true do
       if(db.get(i).label == min_label) then
         print("Сейчас обрабатывается: ", min_label)
         print("В сети его сейчас: ", min)
-        export_bus.setExportConfiguration(2, 1, db.address, i)
+        export_bus.setExportConfiguration(side, 1, db.address, i)
       end
     end
     for i = 1, db_size, 1 do
