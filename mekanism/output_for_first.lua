@@ -7,7 +7,8 @@ local side
 
 function init()
   for i = 0, 5, 1 do
-    if(export_bus.getExportConfiguration(i) ~= nil) then
+    local _, status = export_bus.getExportConfiguration(i)
+    if(status ~= "no matching part") then
       side = i
       break
     end
