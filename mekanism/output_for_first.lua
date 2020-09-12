@@ -8,7 +8,7 @@ while true do
   local me = nil
   repeat
     me = me_controller.getItemsInNetwork()
-  until(type(me) == "nil")
+  until(me ~= nil)
   print(#me)
   if(#me ~= 0) then
     local tmp
@@ -23,8 +23,8 @@ while true do
     db.clear(1)
   else
     print("--------")
-    print("Сейчас ничего обрабатывается: ", min_label)
-    print("В сети его сейчас: IQ Разработчика", min)
+    print("Сейчас ничего обрабатывается")
+    print("В сети его сейчас: IQ Разработчика")
   end
   os.sleep(1)
 end
