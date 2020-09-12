@@ -14,7 +14,7 @@ while true do
     
     local tmp
     repeat
-      tmp = me_controller.store(me[db_size], db.address, db_size, db_size)
+      tmp = me_controller.store(me[1], db.address, 1, 1)
     until(tmp)
 
     print("--------")
