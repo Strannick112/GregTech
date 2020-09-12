@@ -30,7 +30,7 @@ function chestController:new()
         end
     end
 
-    obj.obj:clearCache()
+    obj:clearCache()
 
     return obj
 end
