@@ -7,7 +7,7 @@ local side
 
 function init()
   for i = 0, 5, 1 do
-    if(export_bus.getExportConfiguration(i) not nil)
+    if(export_bus.getExportConfiguration(i) ~= nil) then
       side = i
       break
     end
