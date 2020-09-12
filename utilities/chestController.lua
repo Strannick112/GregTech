@@ -1,8 +1,8 @@
 local std = require "stdlib/stdlib"
 local itemsInfo = require("utilities/itemsInfo").itemsInfo
-local chessController = std.class()
+local chestController = std.class()
 
-function chessController:new()
+function chestController:new()
     local obj = std.parent(self):new()
 
     function obj:clearCache()
@@ -36,5 +36,5 @@ function chessController:new()
 end
 
 return {
-    chessController = chessController
+    chestController = chestController
 }
