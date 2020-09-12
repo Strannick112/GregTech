@@ -10,18 +10,16 @@ while true do
     me = me_controller.getItemsInNetwork()
   until(type(me) ~= "nil")
   
-  if(type(me) ~= "nil") then
-    
-    local tmp
-    repeat
-      tmp = me_controller.store(me[1], db.address, 1, 1)
-    until(tmp)
+  local tmp
+  repeat
+    tmp = me_controller.store(me[1], db.address, 1, 1)
+  until(tmp)
 
-    print("--------")
-    print("Сейчас обрабатывается: ", min_label)
-    print("В сети его сейчас: ", min)
-    export_bus.setExportConfiguration(2, 1, db.address, 1)
-    db.clear(1)
-  end
+  print("--------")
+  print("Сейчас обрабатывается: ", min_label)
+  print("В сети его сейчас: ", min)
+  export_bus.setExportConfiguration(2, 1, db.address, 1)
+  db.clear(1)
+  
   os.sleep(1)
 end
