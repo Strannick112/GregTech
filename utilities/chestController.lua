@@ -14,7 +14,7 @@ function chessController:new()
     end
 
     function obj:readChessIC(side, ic)
-        self:obj:clearCache()
+        self.obj:clearCache()
         for i = 1, ic.getInventorySize(side), 1 do
             local item = ic.getStackInSlot(side, i)
             if(item ~= nil) then
