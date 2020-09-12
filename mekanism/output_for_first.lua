@@ -8,7 +8,7 @@ while true do
   local me = nil
   repeat
     me = me_controller.getItemsInNetwork()
-  until(type(me) ~= "nil")
+  until(type(me) == "nil")
   
   local tmp
   repeat
