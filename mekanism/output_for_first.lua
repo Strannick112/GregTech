@@ -9,6 +9,7 @@ while true do
   repeat
     me = me_controller.getItemsInNetwork()
   until(type(me) == "nil")
+  print(#me)
   if(#me ~= 0) then
     local tmp
     repeat
