@@ -6,7 +6,7 @@ local export_bus = comp.me_exportbus
 local side
 
 function init()
-  for 0, 5, 1 do
+  for i = 0, 5, 1 do
     if(export_bus.getExportConfiguration(i) not nil)
       side = i
       break
