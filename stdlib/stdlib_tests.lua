@@ -1,7 +1,7 @@
 local twire = require "twire/twire"
 local std = require "stdlib/stdlib"
 
-twire.describe('what you\'re testing', function()
+twire.describe('stdlib tests', function()
 
     twire.it('test_create_object', function()
         obj = std.Object:new()
