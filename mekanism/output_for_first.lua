@@ -28,8 +28,8 @@ while true do
     until(tmp)
 
     print("--------")
-    print("Сейчас обрабатывается: ", min_label)
-    print("В сети его сейчас: ", min)
+    print("Сейчас обрабатывается: ", db.get(1).label)
+    print("В сети его сейчас: ", me[1].size)
     export_bus.setExportConfiguration(side, 1, db.address, 1)
     db.clear(1)
   else
