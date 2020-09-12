@@ -19,7 +19,8 @@ function assembly_line.check(file_name, ...)
     if(inv.getStackInSlot(sides.top, i) ~= nil) then
       print(inv.getStackInSlot(sides.top, i).label, inv.getStackInSlot(sides.top, i).size)
       if(inv.getStackInSlot(sides.top, i).name == "extracells:certustank") then
-        list[i] = {string.sub(inv.getStackInSlot(sides.top, i).label, 22, string.len(inv.getStackInSlot(sides.top, i).label)), args[args_i++] or -1, "fluid"}
+        list[i] = {string.sub(inv.getStackInSlot(sides.top, i).label, 22, string.len(inv.getStackInSlot(sides.top, i).label)), args[args_i] or -1, "fluid"}
+        args_i = args_i + 1
       else
         list[i] = {inv.getStackInSlot(sides.top, i).label, inv.getStackInSlot(sides.top, i).size, "solid"}
       end
