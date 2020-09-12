@@ -23,7 +23,11 @@ function chestController:new()
                 self.fullSlotsCount = self.fullSlotsCount + 1
                 self.itemsCount = self.itemsCount + ii.count
                 self.slots[i] = ii
-                self.items[ii.name].size = (self.items[ii.name].size or 0) + ii.count
+                if self.items[ii.name] ~= nil then
+                    self.items[ii.name].count = self.items[ii.name].count + ii.count
+                else
+                    self.items[ii.name] = ii
+                end
             else
                 table.insert(self.emptySlots,i)
             end
